@@ -1,9 +1,15 @@
 package org.example;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Main {
+
+    private static Logger logger = LoggerFactory.getLogger(Main.class);
+
     public static void main(String[] args) {
         char operator;
         BigInteger number1, number2, result;
@@ -27,29 +33,29 @@ public class Main {
             // performs addition between numbers
             case '+':
                 result = number1.add(number2);
-                System.out.println(number1 + " + " + number2 + " = " + result);
+                logger.info(number1 + " + " + number2 + " = " + result);
                 break;
 
             // performs subtraction between numbers
             case '-':
                 result = number1.subtract(number2);
-                System.out.println(number1 + " - " + number2 + " = " + result);
+                logger.info(number1 + " - " + number2 + " = " + result);
                 break;
 
             // performs multiplication between numbers
             case '*':
                 result = number1.multiply(number2);
-                System.out.println(number1 + " * " + number2 + " = " + result);
+                logger.info(number1 + " * " + number2 + " = " + result);
                 break;
 
             // performs division between numbers
             case '/':
                 result = number1.divide(number2);
-                System.out.println(number1 + " / " + number2 + " = " + result);
+                logger.info(number1 + " / " + number2 + " = " + result);
                 break;
 
             default:
-                System.out.println("Invalid operator!");
+                logger.info("Invalid operator!");
                 break;
         }
 
